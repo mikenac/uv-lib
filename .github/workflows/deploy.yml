@@ -26,3 +26,6 @@ jobs:
 
       - name: Package
         run: make package
+
+      - name: Publish
+        run: make publish
