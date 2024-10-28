@@ -14,7 +14,8 @@ lint-fix:
 	@.venv/bin/ruff check --fix src/
 
 test: install
-	@.venv/bin/pytest -n 3
+	@.venv/bin/coverage run --branch -m pytest tests/
+	@.venv/bin/coverage report --fail-under=80 -m src/**/*.py
 
 package:
 	@uv build
